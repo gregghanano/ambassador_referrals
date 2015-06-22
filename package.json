@@ -1,0 +1,7 @@
+{
+  "name": "ambassador_referral",
+  "dependencies": {
+    "angular-local-storage": "^0.2.2",
+    "express": "~4.11.0"
+  }
+}
