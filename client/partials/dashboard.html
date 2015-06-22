@@ -1,11 +1,11 @@
-<div ng-controller='mainController'>
-	<h1>Grow the Web with Referrals!</h1>
+<div class='text-center'ng-controller='mainController'>
+	<h1 class='page-header'>Grow the Web with Referrals!</h1>
 
-	<form>
-		Add a Link! <input type='text' name='newLink' ng-model='newLink.name'>
-		<input type='submit' value='Add' ng-click="addLink()">
+	<form class='form-inline'>
+		Add a Link: <input class='form-control' type='text' name='newLink' ng-model='newLink.name'>
+		<input class ='btn btn-success' type='submit' value='Add' ng-click="addLink()">
 	</form>
-	<table>
+	<table class='table table-bordered table-condensed table-responsive'>
 		<tr>
 			<th>Link Title</th>
 			<th>Clicks</th>
@@ -16,8 +16,8 @@
 		<tr ng-repeat='link in links'>
 			<td>{{ link.name }}</td>
 			<td>{{ link.clicks }}</td>
-			<td><a href="#/edit/{{ link.name }}"><button>Edit</button></a></td>
-			<td><button ng-click='removeLink(link)'>Delete</button></td>
+			<td><a class='btn btn-primary' href="#/edit/{{ link.name }}">Edit</a></td>
+			<td><button class='btn btn-danger' ng-click='removeLink(link)'>Delete</button></td>
 			<td><a href='{{link.url}}'>{{ link.url }}</a></td>
 		</tr>
 	</table>
