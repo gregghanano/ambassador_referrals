@@ -1,7 +1,7 @@
-<div ng-controller = "mainController">
-	<h1>Edit the name of your link</h1>
+<div class='text-left' ng-controller = "mainController">
+	<h1 class='page-header'>Edit the name of your link</h1>
 	<form class='form-inline'>
-		What do you want to change it to?</br>
+		<p>What do you want to change it to?</p></br>
 		<input type='text' class='form-control' placeholder='{{editName}}'ng-model="newName">
 		<input class='btn btn-success' type='submit' value='Save' ng-click="changeName()">
 	</form>
