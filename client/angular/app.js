@@ -9,6 +9,9 @@ myApp.config(function ($routeProvider){
 		templateUrl: 'partials/landing.html',
 		reloadOnSearch: false
 	})
+	.when('/edit/:name', {
+		templateUrl: 'partials/edit.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	})

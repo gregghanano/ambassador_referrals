@@ -1,6 +1,8 @@
 myApp.controller('mainController', function ($scope, $location, $routeParams, localStorageService){
 	$scope.links = localStorageService.get('links');
 	$scope.landingId = $routeParams.link;
+	$scope.editName = $routeParams.name;
+	console.log($routeParams.name);
 
 	var url = "http://localhost:8000/#/landing/?link=";
 
@@ -25,5 +27,20 @@ myApp.controller('mainController', function ($scope, $location, $routeParams, lo
 		$scope.links.push($scope.newLink);
 		localStorageService.set('links', $scope.links);
 		$scope.newLink = {};
+	}
+
+	$scope.changeName = function(oldName){
+		console.log($scope.newName);
+		console.log($scope.editName);
+		for(var obj in $scope.links){
+			if($scope.links[obj].name == $scope.editName){
+				console.log("changing the name here!");
+				$scope.links[obj].name = $scope.newName;
+				console.log("new name is here //// ", $scope.links[obj].name);
+			}
+		}
+		localStorageService.set('links', $scope.links);
+		$location.path('/');
+
 	}
 })

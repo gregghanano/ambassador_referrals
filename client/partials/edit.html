@@ -1,0 +1,8 @@
+<div ng-controller = "mainController">
+	<h1>Edit the name of your link</h1>
+	<form>
+		What do you want to change it to?</br>
+		<input type='text' placeholder='{{editName}}'ng-model="newName">
+		<input type='submit' value='Save' ng-click="changeName()">
+	</form>
+</div>
