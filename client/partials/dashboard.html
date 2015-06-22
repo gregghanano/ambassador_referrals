@@ -1,0 +1,24 @@
+<div ng-controller='mainController'>
+	<h1>Grow the Web with Referrals!</h1>
+
+	<form>
+		Add a Link!: <input type='text' name='newLink' ng-model='newLink.name'>
+		<input type='submit' value='Add' ng-click="addLink()">
+	</form>
+	<table>
+		<tr>
+			<th>Link Title</th>
+			<th>Clicks</th>
+			<th>URL</th>
+			<th>Edit Link</th>
+			<th>Delete Link</th>
+		</tr>
+		<tr ng-repeat='link in links'>
+			<td>{{ link.name }}</td>
+			<td>{{ link.clicks }}</td>
+			<td>{{ link.url }}</td>
+			<td>Edit</td>
+			<td>Delete</td>
+		</tr>
+	</table>
+</div>
