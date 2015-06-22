@@ -1,5 +1,5 @@
 myApp.controller('mainController', function ($scope, $location, $routeParams, localStorageService){
-	$scope.links = localStorageService.get('links');
+	$scope.links = localStorageService.get('links') || [];
 	$scope.landingId = $routeParams.link;
 	$scope.editName = $routeParams.name;
 
