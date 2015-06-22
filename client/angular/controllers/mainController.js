@@ -1,5 +1,6 @@
 myApp.controller('mainController', function ($scope, $location, $routeParams, localStorageService){
 	$scope.links = [];
+	$scope.landingId = $routeParams.link;
 
 	var url = "http://localhost:8000/#/landing/?link=";
 

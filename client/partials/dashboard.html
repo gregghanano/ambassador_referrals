@@ -16,7 +16,7 @@
 		<tr ng-repeat='link in links'>
 			<td>{{ link.name }}</td>
 			<td>{{ link.clicks }}</td>
-			<td>{{ link.url }}</td>
+			<td><a href='{{link.url}}'>{{ link.url }}</a></td>
 			<td>Edit</td>
 			<td>Delete</td>
 		</tr>
