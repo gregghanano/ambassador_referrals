@@ -3,7 +3,7 @@ myApp.controller('mainController', function ($scope, $location, $routeParams, lo
 	$scope.landingId = $routeParams.link;
 	$scope.editName = $routeParams.name;
 
-	var url = "http://localhost:8000/#/landing/?link=";
+	var url = "https://hidden-inlet-5616.herokuapp.com/#/landing/?link=";
 
 	if($routeParams.link){
 		for(var obj in $scope.links){
