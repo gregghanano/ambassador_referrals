@@ -29,7 +29,7 @@ myApp.controller('mainController', function ($scope, $location, $routeParams, lo
 		$scope.newLink = {};
 	}
 
-	$scope.changeName = function(oldName){
+	$scope.changeName = function(){
 		console.log($scope.newName);
 		console.log($scope.editName);
 		for(var obj in $scope.links){
@@ -37,10 +37,21 @@ myApp.controller('mainController', function ($scope, $location, $routeParams, lo
 				console.log("changing the name here!");
 				$scope.links[obj].name = $scope.newName;
 				console.log("new name is here //// ", $scope.links[obj].name);
+				var newUrl = url+$scope.newName;
+				$scope.links[obj].url = newUrl;
 			}
 		}
 		localStorageService.set('links', $scope.links);
 		$location.path('/');
+	}
 
+	$scope.removeLink = function(link){
+		console.log('remove function here');
+		console.log(link);
+		var index = $scope.links.indexOf(link);
+		console.log("link index = ", index);
+		$scope.links.splice(index, 1);
+		console.log("new scope links ", $scope.links);
+		localStorageService.set('links', $scope.links);
 	}
 })

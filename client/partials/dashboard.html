@@ -2,23 +2,23 @@
 	<h1>Grow the Web with Referrals!</h1>
 
 	<form>
-		Add a Link!: <input type='text' name='newLink' ng-model='newLink.name'>
+		Add a Link! <input type='text' name='newLink' ng-model='newLink.name'>
 		<input type='submit' value='Add' ng-click="addLink()">
 	</form>
 	<table>
 		<tr>
 			<th>Link Title</th>
 			<th>Clicks</th>
-			<th>URL</th>
 			<th>Edit Link</th>
 			<th>Delete Link</th>
+			<th>URL</th>
 		</tr>
 		<tr ng-repeat='link in links'>
 			<td>{{ link.name }}</td>
 			<td>{{ link.clicks }}</td>
+			<td><a href="#/edit/{{ link.name }}"><button>Edit</button></a></td>
+			<td><button ng-click='removeLink(link)'>Delete</button></td>
 			<td><a href='{{link.url}}'>{{ link.url }}</a></td>
-			<td><a href="#/edit/{{ link.name }}">Edit</a></td>
-			<td>Delete</td>
 		</tr>
 	</table>
 </div>
