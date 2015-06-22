@@ -4,6 +4,20 @@ myApp.controller('mainController', function ($scope, $location, $routeParams, lo
 
 	var url = "http://localhost:8000/#/landing/?link=";
 
+	console.log("links /// ", $scope.links);
+	if($routeParams.link){
+		console.log('welcome ' + $scope.landingId);
+		console.log($scope.links);
+		for(var obj in $scope.links){
+			console.log($scope.links[obj]);
+			if($scope.links[obj].name == $scope.landingId){
+				console.log("link name = " + $scope.landingId + " and the clicks = " + $scope.links[obj].clicks);
+				$scope.links[obj].clicks += 1;
+			}
+		}
+		localStorageService.set('links', $scope.links);
+	}
+
 	$scope.addLink = function(){
 		var newUrl = url+$scope.newLink.name;
 		$scope.newLink.url = newUrl;
